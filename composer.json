@@ -1,0 +1,33 @@
+{
+  "name": "esas/cmsgate-opencart-epos",
+  "description": "EPOS connector for Opencart",
+  "keywords": [
+    "cmsgate",
+    "esas",
+    "payment gateway",
+    "opencart",
+    "epos",
+    "api"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Esas",
+      "email": "info@esas.com"
+    }
+  ],
+  "config": {
+    "vendor-dir": "src/upload/system/library/esas/cmsgate/epos/vendor"
+  },
+  "require": {
+    "php": ">= 5.6.0",
+    "esas/cmsgate-epos-lib": "v1.7.0",
+    "esas/cmsgate-opencart-lib": "v1.7.0",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src"
+    }
+  }
+}
