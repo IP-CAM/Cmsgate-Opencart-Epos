@@ -11,6 +11,7 @@ namespace esas\cmsgate\epos;
 use esas\cmsgate\CmsConnectorOpencart;
 use esas\cmsgate\epos\utils\RequestParamsEpos;
 use esas\cmsgate\epos\view\admin\ManagedFieldsEpos;
+use esas\cmsgate\view\admin\AdminViewFields;
 use esas\cmsgate\view\admin\ConfigFormOpencart;
 use esas\cmsgate\epos\view\client\CompletionPanelEposOpencart;
 use esas\cmsgate\wrappers\SystemSettingsWrapperOpencart;
@@ -58,8 +59,7 @@ class RegistryEposOpencart extends RegistryEpos
 
     public function createConfigForm()
     {
-        $managedFields = new ManagedFieldsEpos();
-        $managedFields->addAllExcept([
+        $managedFields = $this->getManagedFieldsFactory()->getManagedFieldsExcept(AdminViewFields::CONFIG_FORM_COMMON, [
             ConfigFieldsEpos::shopName()]);
         return $this->cmsConnector->createCommonConfigForm($managedFields);
     }
