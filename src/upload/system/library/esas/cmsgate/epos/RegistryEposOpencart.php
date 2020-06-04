@@ -9,8 +9,10 @@
 namespace esas\cmsgate\epos;
 
 use esas\cmsgate\CmsConnectorOpencart;
+use esas\cmsgate\descriptors\ModuleDescriptor;
+use esas\cmsgate\descriptors\VendorDescriptor;
+use esas\cmsgate\descriptors\VersionDescriptor;
 use esas\cmsgate\epos\utils\RequestParamsEpos;
-use esas\cmsgate\epos\view\admin\ManagedFieldsEpos;
 use esas\cmsgate\view\admin\AdminViewFields;
 use esas\cmsgate\view\admin\ConfigFormOpencart;
 use esas\cmsgate\epos\view\client\CompletionPanelEposOpencart;
@@ -85,4 +87,15 @@ class RegistryEposOpencart extends RegistryEpos
             . "&" . RequestParamsEpos::ORDER_NUMBER . "=" . $orderWrapper->getOrderNumber();
     }
 
+    public function createModuleDescriptor()
+    {
+        return new ModuleDescriptor(
+            "esas_epos",
+            new VersionDescriptor("1.10.0", "2020-06-04"),
+            "Прием платежей через ЕРИП (сервис EPOS)",
+            "https://bitbucket.esas.by/projects/CG/repos/cmsgate-opencart-epos/browse",
+            VendorDescriptor::esas(),
+            "Выставление пользовательских счетов в ЕРИП"
+        );
+    }
 }

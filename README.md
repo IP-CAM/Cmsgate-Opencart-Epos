@@ -42,7 +42,9 @@
     ```
     http://mydomen.my/index.php?route=extension/payment/epos/callback
     ```
-* Модуль ведет лог файл по пути _site_root/upload/system/library/esas/cmsgate/epos/vendor/esas/cmsgate-core/logs/cmsgate.log_
+### Файлы логов
+Модуль ведет лог файл по пути 
+`site_root/upload/system/library/esas/cmsgate/epos/vendor/esas/cmsgate-core/logs/cmsgate.log`
 Для обеспечения **безопасности** необходимо убедиться, что в настройках http-сервера включена директива _AllowOverride All_ для корневой папки.
 
 ### Тестовые данные
@@ -51,5 +53,10 @@
  * включите в настройках модуля режим "Песочницы" (Sandbox)
 
 _Разработано и протестировано с OpenCart v2.3.0.2, v3.0.0.2_
+
+
+### История версий
+* v1.10.0:
+    * Исправление с автоматическим изменением статуса при оплате
 
 
