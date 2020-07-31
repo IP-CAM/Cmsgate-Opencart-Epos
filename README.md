@@ -8,7 +8,7 @@
 
 ### Инструкция по установке:
 1. Создайте резервную копию вашего магазина и базы данных
-1. Установите модуль [cmsgate-opencart-epos.ocmod.zip](https://bitbucket.esas.by/projects/CG/repos/cmsgate-opencart-epos/browse/cmsgate-opencart-epos.ocmod.zip) с помощью _Модули_ -> _Установка расширений_
+1. Установите модуль [cmsgate-opencart-epos.ocmod.zip](https://bitbucket.org/esasby/cmsgate-opencart-epos/src/master/cmsgate-opencart-epos.ocmod.zip) с помощью _Модули_ -> _Установка расширений_
 1. Перейдите к спику установленных модулей в категории оплата (меню __Модули  -> Платежи__)
 1. Напротив модуля EPOS нажмите «Установить»
 
