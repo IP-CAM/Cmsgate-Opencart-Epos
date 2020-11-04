@@ -80,9 +80,8 @@ class RegistryEposOpencart extends RegistryEpos
         return $this->opencartRegistry;
     }
 
-    function getUrlWebpay($orderId)
+    function getUrlWebpay($orderWrapper)
     {
-        $orderWrapper = RegistryEposOpencart::getRegistry()->getOrderWrapper($orderId);
         return SystemSettingsWrapperOpencart::getInstance()->linkCatalogExtension("pay")
             . "&" . RequestParamsEpos::ORDER_NUMBER . "=" . $orderWrapper->getOrderNumber();
     }
@@ -91,7 +90,7 @@ class RegistryEposOpencart extends RegistryEpos
     {
         return new ModuleDescriptor(
             "esas_epos",
-            new VersionDescriptor("1.12.0", "2020-10-20"),
+            new VersionDescriptor("1.12.1", "2020-11-04"),
             "Прием платежей через ЕРИП (сервис EPOS)",
             "https://bitbucket.esas.by/projects/CG/repos/cmsgate-opencart-epos/browse",
             VendorDescriptor::esas(),
