@@ -64,7 +64,8 @@ class RegistryEposOpencart extends RegistryEpos
         $managedFields = $this->getManagedFieldsFactory()->getManagedFieldsExcept(AdminViewFields::CONFIG_FORM_COMMON, [
             ConfigFieldsEpos::paymentMethodNameWebpay(),
             ConfigFieldsEpos::paymentMethodDetailsWebpay(),
-            ConfigFieldsEpos::shopName()]);
+            ConfigFieldsEpos::shopName(),
+            ConfigFieldsEpos::useOrderNumber()]);
         return $this->cmsConnector->createCommonConfigForm($managedFields);
     }
 
@@ -92,7 +93,7 @@ class RegistryEposOpencart extends RegistryEpos
     {
         return new ModuleDescriptor(
             "esas_epos",
-            new VersionDescriptor("1.13.0", "2020-11-10"),
+            new VersionDescriptor("1.13.1", "2020-11-17"),
             "Прием платежей через ЕРИП (сервис EPOS)",
             "https://bitbucket.esas.by/projects/CG/repos/cmsgate-opencart-epos/browse",
             VendorDescriptor::esas(),
