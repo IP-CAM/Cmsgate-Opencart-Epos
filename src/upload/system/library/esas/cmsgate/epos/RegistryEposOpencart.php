@@ -93,7 +93,7 @@ class RegistryEposOpencart extends RegistryEpos
     {
         return new ModuleDescriptor(
             "esas_epos",
-            new VersionDescriptor("1.13.1", "2020-11-17"),
+            new VersionDescriptor("1.13.2", "2021-12-07"),
             "Прием платежей через ЕРИП (сервис EPOS)",
             "https://bitbucket.esas.by/projects/CG/repos/cmsgate-opencart-epos/browse",
             VendorDescriptor::esas(),
