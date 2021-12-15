@@ -39,6 +39,11 @@
 
 ### Внимание!
 * Для автоматического обновления статуса заказа (после оплаты клиентом выставленного в ЕРИП счета) необходимо сообщить в службу технической поддержки сервиса EPOS адрес обработчика:
+    * для версии oc 2.1
+    ```
+    http://mydomen.my/index.php?route=payment/epos/callback
+    ```
+    * для версии oc >2.3
     ```
     http://mydomen.my/index.php?route=extension/payment/epos/callback
     ```
@@ -52,8 +57,25 @@
  * воспользуйтесь данными для подключения к тестовой системе, полученными при регистрации в EPOS
  * включите в настройках модуля режим "Песочницы" (Sandbox)
 
-_Разработано и протестировано с OpenCart v2.3.0.2, v3.0.0.2_
+_Разработано и протестировано с OpenCart v2.1, v2.3.0.2, v3.0.0.2_
 
+### Инструкция по сборке
+ * при сборке cmsgate-opencart-epos.ocmod.zip (для OpenCart > v2.3) необходимо удалить каталоги
+    * upload\admin\controller\payment
+    * upload\admin\view\template\payment
+    * upload\admin\language\english
+    * upload\admin\language\russian
+    * upload\catalog\controller\payment
+    * upload\catalog\model\payment
+    * upload\catalog\view\theme\payment
+ * при сборке cmsgate-opencart21-epos.ocmod.zip (для OpenCart v2.1) необходимо удалить каталоги
+    * upload\admin\controller\extension\payment
+    * upload\admin\view\template\extension\payment
+    * upload\admin\language\en-gb\
+    * upload\admin\language\ru-ru\
+    * upload\catalog\controller\extension\payment
+    * upload\catalog\model\extension\payment
+    * upload\catalog\view\theme\default\template\extension\payment
 
 ### История версий
 * v1.10.0:
