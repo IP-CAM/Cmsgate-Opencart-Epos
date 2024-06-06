@@ -8,7 +8,9 @@
 
 namespace esas\cmsgate\epos\view\client;
 
-class CompletionPanelEposOpencart extends CompletionPanelEpos
+use esas\cmsgate\epos\hro\client\CompletionPanelEposHRO_v2;
+
+class CompletionPanelEposOpencart extends CompletionPanelEposHRO_v2
 {
     public function getCssClass4MsgSuccess()
     {

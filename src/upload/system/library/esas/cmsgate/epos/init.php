@@ -4,5 +4,5 @@ use esas\cmsgate\CmsPlugin;
 use esas\cmsgate\epos\RegistryEposOpencart;
 
 (new CmsPlugin(dirname(__FILE__) . '/vendor', dirname(dirname(dirname(dirname(__FILE__))))))
-    ->setRegistry(new RegistryEposOpencart(isset($registry) ? $registry : $this->registry))
+    ->setRegistry(new RegistryEposOpencart())
     ->init();

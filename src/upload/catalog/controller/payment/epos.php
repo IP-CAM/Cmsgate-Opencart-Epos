@@ -1,4 +1,6 @@
 <?php
+namespace Opencart\Catalog\Controller\Extension\CmsgateOpencartEpos\Payment;
+
 header('Content-Type: text/html; charset=utf-8');
 
 use esas\cmsgate\epos\controllers\ControllerEposAddInvoice;
@@ -10,9 +12,9 @@ use esas\cmsgate\utils\Logger;
 use esas\cmsgate\view\ViewBuilderOpencart;
 use esas\cmsgate\wrappers\SystemSettingsWrapperOpencart;
 
-require_once(dirname(dirname(dirname(dirname(__FILE__)))) . '/system/library/esas/cmsgate/epos/init.php');
+require_once(dirname(__FILE__, 4) . '/system/library/esas/cmsgate/epos/init.php');
 
-class ControllerPaymentEpos extends CatalogControllerExtensionPayment
+class Epos extends CatalogControllerExtensionPayment
 {
     public function index()
     {
@@ -73,7 +75,6 @@ class ControllerPaymentEpos extends CatalogControllerExtensionPayment
             Logger::getLogger("callback")->error("Exception:", $e);
         }
     }
-
 
 
 }
