@@ -16,6 +16,8 @@ use esas\cmsgate\epos\utils\RequestParamsEpos;
 use esas\cmsgate\view\admin\AdminViewFields;
 use esas\cmsgate\view\admin\ConfigFormOpencart;
 use esas\cmsgate\epos\view\client\CompletionPanelEposOpencart;
+use esas\cmsgate\epos\hro\client\CompletionPanelEposHRO;
+use esas\cmsgate\hro\HROManager;
 use esas\cmsgate\wrappers\SystemSettingsWrapperOpencart;
 
 class RegistryEposOpencart extends RegistryEpos
@@ -24,13 +26,17 @@ class RegistryEposOpencart extends RegistryEpos
 
     /**
      * RegistryOpencart constructor.
-     * @param $opencartRegistry
      */
-    public function __construct($opencartRegistry)
+    public function __construct()
     {
-        $this->opencartRegistry = $opencartRegistry;
-        $this->cmsConnector = new CmsConnectorOpencart($opencartRegistry);
+        $this->cmsConnector = new CmsConnectorOpencart();
         $this->paysystemConnector = new PaysystemConnectorEpos();
+    }
+
+    public function init()
+    {
+        parent::init();
+        HROManager::fromRegistry()->addImplementation(CompletionPanelEposHRO::class, CompletionPanelEposOpencart::class);
     }
 
     /**
@@ -73,14 +79,6 @@ class RegistryEposOpencart extends RegistryEpos
     {
         $completionPanel = new CompletionPanelEposOpencart($orderWrapper);
         return $completionPanel;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getOpencartRegistry()
-    {
-        return $this->opencartRegistry;
     }
 
     function getUrlWebpay($orderWrapper)
